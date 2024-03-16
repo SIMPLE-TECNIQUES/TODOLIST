@@ -4,7 +4,7 @@ function TodoList() {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [inputTime, setInputTime] = useState("");
-  const [editMode, setEditMode] = useState(null); // Tracks the ID of the todo item being edited
+  const [editMode, setEditMode] = useState(null);
 
   // Function to add a new todo
   const addTodo = () => {
@@ -31,16 +31,16 @@ function TodoList() {
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
     if (editMode === id) {
-      setEditMode(null); // If the deleted todo was being edited, exit editing mode
+      setEditMode(null); 
     }
   };
 
-  // Function to toggle edit mode for a todo
+  // toggle edit mode for a todo
   const toggleEditMode = (id) => {
     setEditMode(editMode === id ? null : id);
   };
 
-  // Function to toggle completion status for a todo
+  // toggle completion status for a todo
   const toggleCompleted = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -49,7 +49,7 @@ function TodoList() {
     );
   };
 
-  // Get current day and date
+  // current day and date
   const currentDate = new Date();
   const options = {
     weekday: "long",
